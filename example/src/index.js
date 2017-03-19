@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 
-import ResilentComponent from 'react-resilent'
+import ResilentComponent from '../../lib'
 
 const FallbackComponent = () => (
   <div>Fallback: Something went wrong</div>

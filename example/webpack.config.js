@@ -5,7 +5,8 @@ module.exports = {
   entry: './src/index.js',
 
   output: {
-    filename: '[name].js'
+    filename: '[name].js',
+    path: path.join(__dirname, 'dist')
   },
 
   module: {
@@ -14,14 +15,6 @@ module.exports = {
         test: /\.js$/,
         include: path.resolve(__dirname, 'src'),
         use: 'babel-loader'
-      },
-      {
-        test: /\.css$/,
-        include: path.resolve(__dirname, 'src'),
-        loaders: [
-          'style-loader',
-          'css-loader'
-        ]
       }
     ]
   },

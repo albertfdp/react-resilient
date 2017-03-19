@@ -12,6 +12,7 @@
     "travis": "yarn format && yarn test",
     "prebuild": "rm -rf lib/* && mkdir -p lib",
     "build": "babel src/ --ignore spec.js -d lib/",
+    "build:example": "cd example && yarn build",
     "prepublish": "yarn build"
   },
   "peerDependencies": {
@@ -22,6 +23,7 @@
     "babel-plugin-transform-object-rest-spread": "6.23.0",
     "babel-preset-env": "1.2.2",
     "babel-preset-react": "6.23.0",
+    "gh-pages": "0.12.0",
     "jest": "19.0.2",
     "prettier": "0.22.0",
     "raf": "3.3.0",
