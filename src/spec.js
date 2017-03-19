@@ -34,13 +34,13 @@ describe('react-resilent', () => {
       })(BrokenComponent);
     });
 
-    it.skip('renders the fallback', () => {
+    it('renders the fallback', () => {
       return expect(<Resilent />, 'when deeply rendered').then(rendered => {
         expect(rendered, 'to have rendered as', <Fallback />);
       });
     });
 
-    it.skip('calls the onError callback', () => {
+    it('calls the onError callback', () => {
       const onError = sinon.spy();
       
       return expect(<Resilent onError={onError} />, 'when deeply rendered').then(() => {
