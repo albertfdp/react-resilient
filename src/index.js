@@ -6,7 +6,7 @@ const ResilentComponent = (
   }
 ) =>
   ChildComponent => {
-    return class Resilent extends Component {
+    class Resilent extends Component {
       constructor(props) {
         super(props);
 
@@ -35,18 +35,26 @@ const ResilentComponent = (
           ? <FallbackComponent {...other} />
           : <ChildComponent {...other} />;
       }
+    }
+
+    Resilent.propTypes = {
+      onError: PropTypes.func,
+      maxRetries: PropTypes.number
     };
+
+    Resilent.defaultProps = {
+      maxRetries: 1
+    };
+
+    return Resilent;
   };
 
 ResilentComponent.propTypes = {
-  FallbackComponent: PropTypes.node,
-  onError: PropTypes.func,
-  maxRetries: PropTypes.number
+  FallbackComponent: PropTypes.node
 };
 
 ResilentComponent.defaultProps = {
-  FallbackComponent: () => null,
-  maxRetries: 1
+  FallbackComponent: () => null
 };
 
 export default ResilentComponent;

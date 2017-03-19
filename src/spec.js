@@ -42,8 +42,11 @@ describe('react-resilent', () => {
 
     it.skip('calls the onError callback', () => {
       const onError = sinon.spy();
-      
-      return expect(<Resilent onError={onError} />, 'when deeply rendered').then(() => {
+
+      return expect(
+        <Resilent onError={onError} />,
+        'when deeply rendered'
+      ).then(() => {
         expect(onError, 'to have calls satisfying', () => {
           onError(new Error('Fail'));
         });
