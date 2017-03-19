@@ -13,7 +13,8 @@
     "prebuild": "rm -rf lib/* && mkdir -p lib",
     "build": "babel src/ --ignore spec.js -d lib/",
     "build:example": "cd example && yarn build",
-    "prepublish": "yarn build"
+    "prepublish": "yarn build && yarn build:example",
+    "gh-pages": "gh-pages -d example/dist"
   },
   "peerDependencies": {
     "react": "next"
