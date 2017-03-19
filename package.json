@@ -9,6 +9,7 @@
   "scripts": {
     "format": "prettier --single-quote --write '{src,test}/**/*.js'",
     "test": "jest",
+    "travis": "yarn format && yarn test",
     "prebuild": "rm -rf lib/* && mkdir -p lib",
     "build": "babel src/ --ignore spec.js -d lib/",
     "prepublish": "yarn build"
