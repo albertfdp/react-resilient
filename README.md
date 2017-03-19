@@ -5,6 +5,13 @@ A high order component for resilently render components that might fail. It wrap
 * Tries to render your component
 * Returns `<FallbackComponent />` after the maximum number of retries (`maxRetries`)
 
+---
+
+#### ⚠️ DISCLAIMER: Experimental
+This **ONLY** works with `react@next` (Fiber).
+
+---
+
 Example here: [example](https://github.com/albertfdp/react-resilent/tree/master/example)
 
 ### Example
@@ -25,7 +32,7 @@ export default class Application extends React.Component {
   onError = (error) => {
     console.error('Error catched', error)
   }
-
+  
   render () {
     return (
       <ResilentComponent
