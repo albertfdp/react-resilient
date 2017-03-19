@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 
-const ResilentComponent = ({
-  FallbackComponent
-}) =>
+const ResilentComponent = (
+  {
+    FallbackComponent
+  }
+) =>
   ChildComponent => {
     return class Resilent extends Component {
       constructor(props) {
@@ -15,7 +17,7 @@ const ResilentComponent = ({
       }
 
       unstable_handleError(error) {
-        const { onError } = this.props
+        const { onError } = this.props;
 
         this.setState(prevState => ({
           error,
@@ -27,9 +29,9 @@ const ResilentComponent = ({
 
       render() {
         const { error, retries } = this.state;
-        const { maxRetries, onError, ...other } = this.props
+        const { maxRetries, onError, ...other } = this.props;
 
-        return (error && retries > maxRetries)
+        return error && retries > maxRetries
           ? <FallbackComponent {...other} />
           : <ChildComponent {...other} />;
       }
