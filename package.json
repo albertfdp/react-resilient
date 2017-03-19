@@ -1,0 +1,41 @@
+{
+  "name": "react-resilent",
+  "version": "0.1.0",
+  "description": "A high order component for resilently render errored components",
+  "main": "lib/index.js",
+  "repository": "https://github.com/albertfdp/react-resilent",
+  "author": "Albert Fernández <albert@nandez.cat>",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --single-quote --write '{src,test}/**/*.js'",
+    "test": "jest",
+    "prebuild": "rm -rf lib/* && mkdir -p lib",
+    "build": "babel src/ --ignore spec.js -d lib/",
+    "prepublish": "yarn build"
+  },
+  "peerDependencies": {
+    "react": "next"
+  },
+  "devDependencies": {
+    "babel-cli": "6.24.0",
+    "babel-plugin-transform-object-rest-spread": "6.23.0",
+    "babel-preset-env": "1.2.2",
+    "babel-preset-react": "6.23.0",
+    "jest": "19.0.2",
+    "prettier": "0.22.0",
+    "raf": "3.3.0",
+    "react": "next",
+    "react-addons-test-utils": "next",
+    "react-dom": "next",
+    "react-test-renderer": "next",
+    "sinon": "2.0.0",
+    "unexpected": "10.26.3",
+    "unexpected-react": "3.5.0",
+    "unexpected-sinon": "10.7.1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "test/expect": "<rootDir>/test/index.js"
+    }
+  }
+}
