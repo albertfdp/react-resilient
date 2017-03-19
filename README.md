@@ -1,5 +1,7 @@
 # react-resilent
 
+[![Build Status](https://travis-ci.org/albertfdp/react-resilent.svg?branch=master)](https://travis-ci.org/albertfdp/react-resilent)
+
 A high order component for resilently render components that might fail. It wraps them around an fiber error boundary.
 
 * Tries to render your component
