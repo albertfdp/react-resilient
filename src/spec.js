@@ -29,11 +29,8 @@ describe('react-resilent', () => {
     let onError;
 
     beforeEach(() => {
-      onError = sinon.spy();
-
       Resilent = ResilentComponent({
-        FallbackComponent: Fallback,
-        onError
+        FallbackComponent: Fallback
       })(BrokenComponent);
     });
 
@@ -44,7 +41,9 @@ describe('react-resilent', () => {
     });
 
     it.skip('calls the onError callback', () => {
-      return expect(<Resilent />, 'when deeply rendered').then(() => {
+      const onError = sinon.spy();
+      
+      return expect(<Resilent onError={onError} />, 'when deeply rendered').then(() => {
         expect(onError, 'to have calls satisfying', () => {
           onError(new Error('Fail'));
         });
