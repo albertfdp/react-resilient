@@ -49,9 +49,15 @@ export default class Application extends React.Component {
 ### API
 
 ```js
-Resilent({
+const MyResilentComponent = Resilent({
   FallbackComponent: React.Component
 })(React.Component)
+
+
+<MyResilentComponent
+  maxRetries={number}
+  onError={func}
+/>
 ```
 
 ##### `opts.FallbackComponent`
