@@ -14,9 +14,7 @@ This **ONLY** works with `react@next` (Fiber).
 
 ---
 
-Example here: [example](https://github.com/albertfdp/react-resilent/tree/master/example)
-
-### Example
+### [Demo](https://albertfdp.github.io/react-resilent)
 
 ```js
 import React from 'react'
