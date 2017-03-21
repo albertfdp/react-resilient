@@ -10,7 +10,7 @@ A high order component for resilently render components that might fail. It wrap
 ---
 
 #### ⚠️ DISCLAIMER: Experimental
-This **ONLY** works with `react@next` (Fiber).
+This is **experimental** and **unstable** React API. It will be fully supported with `react@next` (Fiber).
 
 ---
 
