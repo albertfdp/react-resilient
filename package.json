@@ -12,7 +12,7 @@
     "travis": "yarn format && yarn test",
     "prebuild": "rm -rf lib/* && mkdir -p lib",
     "build": "babel src/ --ignore spec.js -d lib/",
-    "build:example": "cd example && yarn build",
+    "build:example": "cd example && NODE_ENV=production yarn build",
     "dist": "yarn build && yarn build:example",
     "gh-pages": "gh-pages -d example/dist"
   },

@@ -1,11 +1,12 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: './src/index.js',
 
   output: {
-    filename: '[name].js',
+    filename: isProduction ? '[name].[hash].js' : '[name].js',
     path: path.join(__dirname, 'dist')
   },
 
