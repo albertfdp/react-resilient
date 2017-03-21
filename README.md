@@ -5,7 +5,7 @@
 A high order component for resilently render components that might fail. It wraps them around a React Fiber error boundary.
 
 * Tries to render your component
-* Returns `<FallbackComponent />` after the maximum number of retries (`maxRetries`)
+* Returns `<FallbackComponent />` after the maximum number of retries (`props.maxRetries`)
 
 ---
 
@@ -62,7 +62,7 @@ const MyResilentComponent = Resilent({
 
 React component displayed after the `maxRetries`
 
-##### `props.maxRetries` (optional, defaults to 1)
+##### `props.maxRetries` (optional, defaults to 0)
 
 Number of retries before showing the `FallbackComponent`
 

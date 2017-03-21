@@ -31,7 +31,7 @@ const ResilentComponent = (
         const { error, retries } = this.state;
         const { maxRetries, onError, ...other } = this.props;
 
-        return error && retries > maxRetries
+        return error && retries >= maxRetries
           ? <FallbackComponent {...other} />
           : <ChildComponent {...other} />;
       }
@@ -43,7 +43,7 @@ const ResilentComponent = (
     };
 
     Resilent.defaultProps = {
-      maxRetries: 1
+      maxRetries: 0
     };
 
     return Resilent;
