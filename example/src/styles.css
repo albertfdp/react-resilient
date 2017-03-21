@@ -1,0 +1,71 @@
+html,
+body,
+:global(#container) {
+  font-family: sans-serif;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+:global(#container) {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.app {
+  display: flex;
+  flex-direction: row;
+
+  height: 100%;
+
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+:global(.refresh) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.half {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.error {
+  color: white;
+  background-color: tomato;
+}
+
+.button {
+  font-size: 16px;
+
+  padding: 10px 20px;
+
+  color: white;
+  border: 2px solid indianred;
+  border-bottom-width: 4px;
+  background-color: tomato;
+}
+
+.button:hover {
+  cursor: pointer;
+
+  opacity: .8;
+}
+
+.message {
+  margin-top: 20px;
+}

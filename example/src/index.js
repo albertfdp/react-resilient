@@ -1,70 +1,100 @@
-import React, { Component } from 'react'
-import { render } from 'react-dom'
+import React, { Component } from 'react';
+import classnames from 'classnames';
+import { render } from 'react-dom';
 
-import ResilentComponent from '../../lib'
+import styles from './styles.css';
+
+import ResilentComponent from '../../lib';
 
 const FallbackComponent = () => (
-  <div>Fallback: Something went wrong</div>
-)
+  <div className={styles.fallback}>Fallback: Something went wrong</div>
+);
 
 class Broken extends Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
 
-    this.state = { fail: false }
-    this.onBreak = this.onBreak.bind(this)
+    this.state = { fail: false };
+    this.onBreak = this.onBreak.bind(this);
   }
 
-  componentDidUpdate () {
-    const { fail } = this.state
+  componentDidUpdate() {
+    const { fail } = this.state;
 
-    if (fail) { throw new Error('What!!') }
+    if (fail) {
+      throw new Error('What!!');
+    }
   }
 
-  onBreak () {
-    this.setState({ fail: true })
+  onBreak() {
+    this.setState({ fail: true });
   }
 
-  render () {
+  render() {
     return (
-      <button onClick={this.onBreak}>
+      <button className={styles.button} onClick={this.onBreak}>
         Break me
       </button>
-    )
+    );
   }
 }
 
-const onError = () => console.log('foo')
+const onError = () => console.log('foo');
 
 const Resilent = ResilentComponent({
   FallbackComponent
-})(Broken)
+})(Broken);
 
 class App extends Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
 
-    this.state = { errors: 0 }
-    this.incrementError = this.incrementError.bind(this)
+    this.state = { errors: [] };
+    this.incrementError = this.incrementError.bind(this);
   }
 
-  incrementError () {
-    this.setState(prevState => ({ errors: prevState.errors + 1 }))
+  incrementError(error) {
+    this.setState(prevState => ({
+      errors: prevState.errors.concat(error)
+    }));
   }
 
-  render () {
-    const { errors } = this.state
+  renderMessage() {
+    const { errors } = this.state;
 
-    return [
-      <Resilent onError={this.incrementError} maxRetries={2}/>,
-      <div>
-        { this.state.errors > 2 ? `Maximum retries (${errors} errors)` : `Errors: ${errors}` }
+    if (errors.length === 0) {
+      return 'This will retry, and then show a fallback.';
+    } else if (errors.length === 1) {
+      return 'It failed. Try one more time';
+    } else {
+      return null;
+    }
+  }
+
+  render() {
+    const { errors } = this.state;
+
+    return (
+      <div className={styles.app}>
+        <div className={styles.half}>
+          <p>This will break the <strong>entire</strong> app.</p>
+          <Broken />
+        </div>
+        <div
+          className={classnames(styles.half, {
+            [styles.error]: errors.length > 0
+          })}
+        >
+          <p>{this.renderMessage()}</p>
+          <Resilent onError={this.incrementError} maxRetries={1} />
+        </div>
       </div>
-    ]
+    );
   }
 }
 
-const root = document.createElement('div')
-document.body.appendChild(root)
+const root = document.createElement('div');
+root.id = 'container';
+document.body.appendChild(root);
 
-render(<App />, root)
+render(<App />, root);
