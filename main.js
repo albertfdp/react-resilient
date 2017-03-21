@@ -11757,7 +11757,7 @@ var ResilentComponent = function ResilentComponent(_ref) {
               onError = _props.onError,
               other = _objectWithoutProperties(_props, ['maxRetries', 'onError']);
 
-          return error && retries >= maxRetries ? _react2.default.createElement(FallbackComponent, other) : _react2.default.createElement(ChildComponent, other);
+          return error && retries > maxRetries ? _react2.default.createElement(FallbackComponent, other) : _react2.default.createElement(ChildComponent, other);
         }
       }]);
 
