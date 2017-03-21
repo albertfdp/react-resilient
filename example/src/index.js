@@ -77,6 +77,7 @@ class App extends Component {
     return (
       <div className={styles.app}>
         <div className={styles.half}>
+          <h3>A normal Component</h3>
           <p>This will break the <strong>entire</strong> app.</p>
           <Broken />
         </div>
@@ -85,6 +86,7 @@ class App extends Component {
             [styles.error]: errors.length > 0
           })}
         >
+          <h3>With HOC react-resilent</h3>
           <p>{this.renderMessage()}</p>
           <Resilent onError={this.incrementError} maxRetries={1} />
         </div>

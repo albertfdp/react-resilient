@@ -44,6 +44,10 @@ body,
   justify-content: center;
 }
 
+.half:first-child {
+  border-right: 2px solid slategray;
+}
+
 .error {
   color: white;
   background-color: tomato;
