@@ -17,7 +17,7 @@
     "gh-pages": "gh-pages -d example/dist"
   },
   "peerDependencies": {
-    "react": "next"
+    "react": "^15.4.0 || ^16.0.0 || next"
   },
   "devDependencies": {
     "babel-cli": "6.24.0",
