@@ -95,8 +95,4 @@ class App extends Component {
   }
 }
 
-const root = document.createElement('div');
-root.id = 'container';
-document.body.appendChild(root);
-
-render(<App />, root);
+render(<App />, document.getElementById('container'));
