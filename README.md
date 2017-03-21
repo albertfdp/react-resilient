@@ -1,6 +1,7 @@
 # react-resilent
 
 [![Build Status](https://travis-ci.org/albertfdp/react-resilent.svg?branch=master)](https://travis-ci.org/albertfdp/react-resilent)
+[![npm version](https://badge.fury.io/js/react-resilent.svg)](https://badge.fury.io/js/react-resilent)
 
 A high order component for resilently render components that might fail. It wraps them around a React Fiber error boundary.
 
