@@ -95,4 +95,5 @@ class App extends Component {
   }
 }
 
+document.querySelector('.hidden').classList.toggle('hidden');
 render(<App />, document.getElementById('container'));
