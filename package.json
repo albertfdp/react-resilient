@@ -1,6 +1,6 @@
 {
   "name": "react-resilent",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A high order component for resilently render errored components",
   "main": "lib/index.js",
   "repository": "https://github.com/albertfdp/react-resilent",
