@@ -13716,7 +13716,7 @@ exports = module.exports = __webpack_require__(103)(undefined);
 
 
 // module
-exports.push([module.i, "html,\nbody,\n#container {\n  font-family: sans-serif;\n\n  width: 100%;\n  height: 100%;\n  margin: 0;\n}\n\n#container {\n  display: flex;\n  flex-direction: column;\n\n  justify-content: center;\n}\n\n._2q9tNeMZhsXXN0Wm7SYoYm {\n  display: flex;\n  flex-direction: row;\n\n  height: 100%;\n\n  align-items: center;\n  flex: 1;\n  justify-content: center;\n}\n\n.refresh {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n._31rI2VHfT9iQpWpwe8uc_7 {\n  display: flex;\n  flex-direction: column;\n\n  height: 100%;\n\n  align-items: center;\n  flex: 1;\n  justify-content: center;\n}\n\n._2HacnOe1FVGq-7PS1fPE17 {\n  color: white;\n  background-color: tomato;\n}\n\n._3VugnrfEgqYpEEZYQV0geJ {\n  font-size: 16px;\n\n  padding: 10px 20px;\n\n  color: white;\n  border: 2px solid indianred;\n  border-bottom-width: 4px;\n  background-color: tomato;\n}\n\n._3VugnrfEgqYpEEZYQV0geJ:hover {\n  cursor: pointer;\n\n  opacity: .8;\n}\n\n._3XbXjB8n_qhh_iYv0MgKxL {\n  margin-top: 20px;\n}\n", ""]);
+exports.push([module.i, "html,\nbody,\n#container {\n  font-family: sans-serif;\n\n  width: 100%;\n  height: 100%;\n  margin: 0;\n}\n\n#container {\n  display: flex;\n  flex-direction: column;\n\n  justify-content: center;\n}\n\n._2q9tNeMZhsXXN0Wm7SYoYm {\n  display: flex;\n  flex-direction: row;\n\n  height: 100%;\n\n  align-items: center;\n  flex: 1;\n  justify-content: center;\n}\n\n.refresh {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n\n._31rI2VHfT9iQpWpwe8uc_7 {\n  display: flex;\n  flex-direction: column;\n\n  height: 100%;\n\n  align-items: center;\n  flex: 1;\n  justify-content: center;\n}\n\n._31rI2VHfT9iQpWpwe8uc_7:first-child {\n  border-right: 2px solid slategray;\n}\n\n._2HacnOe1FVGq-7PS1fPE17 {\n  color: white;\n  background-color: tomato;\n}\n\n._3VugnrfEgqYpEEZYQV0geJ {\n  font-size: 16px;\n\n  padding: 10px 20px;\n\n  color: white;\n  border: 2px solid indianred;\n  border-bottom-width: 4px;\n  background-color: tomato;\n}\n\n._3VugnrfEgqYpEEZYQV0geJ:hover {\n  cursor: pointer;\n\n  opacity: .8;\n}\n\n._3XbXjB8n_qhh_iYv0MgKxL {\n  margin-top: 20px;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -29895,6 +29895,11 @@ var App = function (_Component2) {
           'div',
           { className: _styles2.default.half },
           _react2.default.createElement(
+            'h3',
+            null,
+            'A normal Component'
+          ),
+          _react2.default.createElement(
             'p',
             null,
             'This will break the ',
@@ -29912,6 +29917,11 @@ var App = function (_Component2) {
           {
             className: (0, _classnames3.default)(_styles2.default.half, _defineProperty({}, _styles2.default.error, errors.length > 0))
           },
+          _react2.default.createElement(
+            'h3',
+            null,
+            'With HOC react-resilent'
+          ),
           _react2.default.createElement(
             'p',
             null,
