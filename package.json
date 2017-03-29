@@ -11,6 +11,7 @@
     "test": "jest",
     "travis": "yarn format && yarn test",
     "prebuild": "rm -rf lib/* && mkdir -p lib",
+    "prepublish": "yarn build",
     "build": "babel src/ --ignore spec.js -d lib/",
     "build:example": "cd example && NODE_ENV=production yarn build",
     "dist": "yarn build && yarn build:example",

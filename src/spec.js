@@ -3,7 +3,7 @@ import React from 'react';
 import expect from 'test/expect';
 import sinon from 'sinon';
 
-import ResilientComponent from '.';
+import Resilient from '.';
 
 const Fallback = () => <div>Something went wrong</div>;
 const Working = () => <div>It works!</div>;
@@ -13,38 +13,43 @@ const BrokenComponent = () => {
 };
 
 describe('react-resilient', () => {
-  let Resilient;
-
   describe('when rendering a working component', () => {
-    beforeEach(() => {
-      Resilient = ResilientComponent({ FallbackComponent: Fallback })(Working);
-    });
-
     it('renders', () => {
-      expect(<Resilient />, 'to render as', <Working />);
+      expect(
+        <Resilient FallbackComponent={Fallback}>
+          <Working />
+        </Resilient>,
+        'to render as',
+        <Working />
+      );
     });
   });
 
-  describe('when the component fails', () => {
+  /** unexpected-react doesn't support unstable_handleError yet */
+  describe.skip('when the component fails', () => {
     let onError;
 
-    beforeEach(() => {
-      Resilient = ResilientComponent({
-        FallbackComponent: Fallback
-      })(BrokenComponent);
+    it('renders the fallback', () => {
+      return expect(
+        <Resilient FallbackComponent={Fallback} maxRetries={0}>
+          <BrokenComponent />
+        </Resilient>,
+        'to deeply render as',
+        <Fallback />
+      );
     });
 
-    it.skip('renders the fallback', () => {
-      return expect(<Resilient />, 'when deeply rendered').then(rendered => {
-        expect(rendered, 'to have rendered as', <Fallback />);
-      });
-    });
-
-    it.skip('calls the onError callback', () => {
+    it('calls the onError callback', () => {
       const onError = sinon.spy();
 
       return expect(
-        <Resilient onError={onError} />,
+        <Resilient
+          onError={onError}
+          FallbackComponent={Fallback}
+          maxRetries={0}
+        >
+          <BrokenComponent />
+        </Resilient>,
         'when deeply rendered'
       ).then(() => {
         expect(onError, 'to have calls satisfying', () => {

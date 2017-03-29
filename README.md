@@ -6,7 +6,7 @@
 A high order component for resiliently render components that might fail. It wraps them around a React Fiber error boundary.
 
 * Tries to render your component
-* Returns `<FallbackComponent />` after the maximum number of retries (`props.maxRetries`)
+* Renders `<FallbackComponent />` after the maximum number of retries (`props.maxRetries`)
 
 ---
 
@@ -25,21 +25,24 @@ const Broken = () => {
   throw new Error('Broken!')
 }
 
-const ResilientComponent = Resilient({
-  FallbackComponent: () => <div>Fallback component</div>
-})(Broken)
+const FallbackComponent = () => (
+  <div>This is my fallback</div>
+)
 
 export default class Application extends React.Component {
   onError = (error) => {
     console.error('Error catched', error)
   }
-
+  
   render () {
     return (
-      <ResilientComponent
+      <Resilient
+        FallbackComponent={FallbackComponent}
         maxRetries={2}
         onError={this.onError}
-      />
+      >
+        <Broken />
+      </Resilient>
     )
   }
 }
@@ -48,18 +51,16 @@ export default class Application extends React.Component {
 ### API
 
 ```js
-const MyResilientComponent = Resilient({
-  FallbackComponent: React.Component
-})(React.Component)
-
-
-<MyResilientComponent
+<Resilient
+  FallbackComponent={React.Component}
   maxRetries={number}
   onError={func}
-/>
+>
+  <YourComponent />
+</Resilient>
 ```
 
-##### `opts.FallbackComponent`
+##### `props.FallbackComponent (optional, defaults to render null)`
 
 React component displayed after the `maxRetries`
 
