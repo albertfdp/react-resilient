@@ -1,12 +1,12 @@
 import React, { Component, PropTypes } from 'react';
 
-const ResilentComponent = (
+const ResilientComponent = (
   {
     FallbackComponent
   }
 ) =>
   ChildComponent => {
-    class Resilent extends Component {
+    class Resilient extends Component {
       constructor(props) {
         super(props);
 
@@ -37,24 +37,24 @@ const ResilentComponent = (
       }
     }
 
-    Resilent.propTypes = {
+    Resilient.propTypes = {
       onError: PropTypes.func,
       maxRetries: PropTypes.number
     };
 
-    Resilent.defaultProps = {
+    Resilient.defaultProps = {
       maxRetries: 0
     };
 
-    return Resilent;
+    return Resilient;
   };
 
-ResilentComponent.propTypes = {
+ResilientComponent.propTypes = {
   FallbackComponent: PropTypes.node
 };
 
-ResilentComponent.defaultProps = {
+ResilientComponent.defaultProps = {
   FallbackComponent: () => null
 };
 
-export default ResilentComponent;
+export default ResilientComponent;

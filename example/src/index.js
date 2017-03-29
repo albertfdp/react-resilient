@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 
 import styles from './styles.css';
 
-import ResilentComponent from '../../lib';
+import ResilientComponent from '../../lib';
 
 const FallbackComponent = () => (
   <div className={styles.fallback}>Fallback: Something went wrong</div>
@@ -41,7 +41,7 @@ class Broken extends Component {
 
 const onError = () => console.log('foo');
 
-const Resilent = ResilentComponent({
+const Resilient = ResilientComponent({
   FallbackComponent
 })(Broken);
 
@@ -86,9 +86,9 @@ class App extends Component {
             [styles.error]: errors.length > 0
           })}
         >
-          <h3>With HOC react-resilent</h3>
+          <h3>With HOC react-resilient</h3>
           <p>{this.renderMessage()}</p>
-          <Resilent onError={this.incrementError} maxRetries={1} />
+          <Resilient onError={this.incrementError} maxRetries={1} />
         </div>
       </div>
     );

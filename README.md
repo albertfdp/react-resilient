@@ -1,9 +1,9 @@
-# react-resilent
+# react-resilient
 
-[![Build Status](https://travis-ci.org/albertfdp/react-resilent.svg?branch=master)](https://travis-ci.org/albertfdp/react-resilent)
-[![npm version](https://badge.fury.io/js/react-resilent.svg)](https://badge.fury.io/js/react-resilent)
+[![Build Status](https://travis-ci.org/albertfdp/react-resilient.svg?branch=master)](https://travis-ci.org/albertfdp/react-resilient)
+[![npm version](https://badge.fury.io/js/react-resilient.svg)](https://badge.fury.io/js/react-resilient)
 
-A high order component for resilently render components that might fail. It wraps them around a React Fiber error boundary.
+A high order component for resiliently render components that might fail. It wraps them around a React Fiber error boundary.
 
 * Tries to render your component
 * Returns `<FallbackComponent />` after the maximum number of retries (`props.maxRetries`)
@@ -15,17 +15,17 @@ This is **experimental** and **unstable** React API. It will be fully supported 
 
 ---
 
-### [Demo](https://albertfdp.github.io/react-resilent)
+### [Demo](https://albertfdp.github.io/react-resilient)
 
 ```js
 import React from 'react'
-import Resilent from 'react-resilent'
+import Resilient from 'react-resilient'
 
 const Broken = () => {
   throw new Error('Broken!')
 }
 
-const ResilentComponent = Resilent({
+const ResilientComponent = Resilient({
   FallbackComponent: () => <div>Fallback component</div>
 })(Broken)
 
@@ -33,10 +33,10 @@ export default class Application extends React.Component {
   onError = (error) => {
     console.error('Error catched', error)
   }
-  
+
   render () {
     return (
-      <ResilentComponent
+      <ResilientComponent
         maxRetries={2}
         onError={this.onError}
       />
@@ -48,12 +48,12 @@ export default class Application extends React.Component {
 ### API
 
 ```js
-const MyResilentComponent = Resilent({
+const MyResilientComponent = Resilient({
   FallbackComponent: React.Component
 })(React.Component)
 
 
-<MyResilentComponent
+<MyResilientComponent
   maxRetries={number}
   onError={func}
 />
