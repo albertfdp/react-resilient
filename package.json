@@ -1,9 +1,9 @@
 {
-  "name": "react-resilent",
+  "name": "react-resilient",
   "version": "0.3.0",
-  "description": "A high order component for resilently render errored components",
+  "description": "A high order component for resiliently render errored components",
   "main": "lib/index.js",
-  "repository": "https://github.com/albertfdp/react-resilent",
+  "repository": "https://github.com/albertfdp/react-resilient",
   "author": "Albert Fernández <albert@nandez.cat>",
   "license": "MIT",
   "scripts": {

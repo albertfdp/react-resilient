@@ -27,7 +27,7 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'react-resilent',
+      title: 'react-resilient',
       template: 'index.html.ejs'
     })
   ]

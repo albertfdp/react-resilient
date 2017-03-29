@@ -11712,16 +11712,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var ResilentComponent = function ResilentComponent(_ref) {
+var ResilientComponent = function ResilientComponent(_ref) {
   var FallbackComponent = _ref.FallbackComponent;
   return function (ChildComponent) {
-    var Resilent = function (_Component) {
-      _inherits(Resilent, _Component);
+    var Resilient = function (_Component) {
+      _inherits(Resilient, _Component);
 
-      function Resilent(props) {
-        _classCallCheck(this, Resilent);
+      function Resilient(props) {
+        _classCallCheck(this, Resilient);
 
-        var _this = _possibleConstructorReturn(this, (Resilent.__proto__ || Object.getPrototypeOf(Resilent)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Resilient.__proto__ || Object.getPrototypeOf(Resilient)).call(this, props));
 
         _this.state = {
           error: null,
@@ -11730,7 +11730,7 @@ var ResilentComponent = function ResilentComponent(_ref) {
         return _this;
       }
 
-      _createClass(Resilent, [{
+      _createClass(Resilient, [{
         key: 'unstable_handleError',
         value: function unstable_handleError(error) {
           var onError = this.props.onError;
@@ -11761,33 +11761,34 @@ var ResilentComponent = function ResilentComponent(_ref) {
         }
       }]);
 
-      return Resilent;
+      return Resilient;
     }(_react.Component);
 
-    Resilent.propTypes = {
+    Resilient.propTypes = {
       onError: _react.PropTypes.func,
       maxRetries: _react.PropTypes.number
     };
 
-    Resilent.defaultProps = {
+    Resilient.defaultProps = {
       maxRetries: 0
     };
 
-    return Resilent;
+    return Resilient;
   };
 };
 
-ResilentComponent.propTypes = {
+ResilientComponent.propTypes = {
   FallbackComponent: _react.PropTypes.node
 };
 
-ResilentComponent.defaultProps = {
+ResilientComponent.defaultProps = {
   FallbackComponent: function FallbackComponent() {
     return null;
   }
 };
 
-exports.default = ResilentComponent;
+exports.default = ResilientComponent;
+
 
 /***/ }),
 /* 100 */
@@ -13716,7 +13717,7 @@ exports = module.exports = __webpack_require__(103)(undefined);
 
 
 // module
-exports.push([module.i, "html,\nbody,\n#container {\n  font-family: sans-serif;\n\n  width: 100%;\n  height: 100%;\n  margin: 0;\n}\n\n#container {\n  display: flex;\n  flex-direction: column;\n\n  justify-content: center;\n}\n\n._2q9tNeMZhsXXN0Wm7SYoYm {\n  z-index: 2;\n\n  display: flex;\n  flex-direction: row;\n\n  height: 100%;\n\n  background-color: white;\n\n  align-items: center;\n  flex: 1;\n  justify-content: center;\n}\n\n.refresh {\n  display: flex;\n  flex-direction: column;\n\n  align-items: center;\n  justify-content: center;\n}\n\n._31rI2VHfT9iQpWpwe8uc_7 {\n  display: flex;\n  flex-direction: column;\n\n  height: 80%;\n\n  align-items: center;\n  flex: 1;\n  justify-content: center;\n}\n\n._31rI2VHfT9iQpWpwe8uc_7:first-child {\n  border-right: 2px solid slategray;\n}\n\n._2HacnOe1FVGq-7PS1fPE17 {\n  color: white;\n  background-color: tomato;\n}\n\n._3VugnrfEgqYpEEZYQV0geJ {\n  font-size: 16px;\n\n  padding: 10px 20px;\n\n  color: white;\n  border: 2px solid indianred;\n  border-bottom-width: 4px;\n  background-color: tomato;\n}\n\n._3VugnrfEgqYpEEZYQV0geJ:hover {\n  cursor: pointer;\n\n  opacity: .8;\n}\n\n._3XbXjB8n_qhh_iYv0MgKxL {\n  margin-top: 20px;\n}\n", ""]);
+exports.push([module.i, "html,\nbody,\n#container {\n  font-family: sans-serif;\n\n  width: 100%;\n  height: 100%;\n  margin: 0;\n}\n\n#container {\n  display: flex;\n  flex-direction: column;\n\n  justify-content: center;\n}\n\n._2q9tNeMZhsXXN0Wm7SYoYm {\n  z-index: 2;\n\n  display: flex;\n  flex-direction: row;\n\n  height: 100%;\n\n  background-color: white;\n\n  align-items: center;\n  flex: 1;\n  justify-content: center;\n}\n\n.refresh {\n  display: flex;\n  flex-direction: column;\n\n  align-items: center;\n  justify-content: center;\n}\n\n._31rI2VHfT9iQpWpwe8uc_7 {\n  display: flex;\n  flex-direction: column;\n\n  height: 100%;\n\n  align-items: center;\n  flex: 1;\n  justify-content: center;\n}\n\n._31rI2VHfT9iQpWpwe8uc_7:first-child {\n  border-right: 2px solid slategray;\n}\n\n._2HacnOe1FVGq-7PS1fPE17 {\n  color: white;\n  background-color: tomato;\n}\n\n._3VugnrfEgqYpEEZYQV0geJ {\n  font-size: 16px;\n\n  padding: 10px 20px;\n\n  color: white;\n  border: 2px solid indianred;\n  border-bottom-width: 4px;\n  background-color: tomato;\n}\n\n._3VugnrfEgqYpEEZYQV0geJ:hover {\n  cursor: pointer;\n\n  opacity: .8;\n}\n\n._3XbXjB8n_qhh_iYv0MgKxL {\n  margin-top: 20px;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -29842,7 +29843,7 @@ var onError = function onError() {
   return console.log('foo');
 };
 
-var Resilent = (0, _lib2.default)({
+var Resilient = (0, _lib2.default)({
   FallbackComponent: FallbackComponent
 })(Broken);
 
@@ -29920,14 +29921,14 @@ var App = function (_Component2) {
           _react2.default.createElement(
             'h3',
             null,
-            'With HOC react-resilent'
+            'With HOC react-resilient'
           ),
           _react2.default.createElement(
             'p',
             null,
             this.renderMessage()
           ),
-          _react2.default.createElement(Resilent, { onError: this.incrementError, maxRetries: 1 })
+          _react2.default.createElement(Resilient, { onError: this.incrementError, maxRetries: 1 })
         )
       );
     }
@@ -29936,6 +29937,7 @@ var App = function (_Component2) {
   return App;
 }(_react.Component);
 
+document.querySelector('.hidden').classList.toggle('hidden');
 (0, _reactDom.render)(_react2.default.createElement(App, null), document.getElementById('container'));
 
 /***/ })

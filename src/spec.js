@@ -3,7 +3,7 @@ import React from 'react';
 import expect from 'test/expect';
 import sinon from 'sinon';
 
-import ResilentComponent from '.';
+import ResilientComponent from '.';
 
 const Fallback = () => <div>Something went wrong</div>;
 const Working = () => <div>It works!</div>;
@@ -12,16 +12,16 @@ const BrokenComponent = () => {
   throw new Error('Fail');
 };
 
-describe('react-resilent', () => {
-  let Resilent;
+describe('react-resilient', () => {
+  let Resilient;
 
   describe('when rendering a working component', () => {
     beforeEach(() => {
-      Resilent = ResilentComponent({ FallbackComponent: Fallback })(Working);
+      Resilient = ResilientComponent({ FallbackComponent: Fallback })(Working);
     });
 
     it('renders', () => {
-      expect(<Resilent />, 'to render as', <Working />);
+      expect(<Resilient />, 'to render as', <Working />);
     });
   });
 
@@ -29,13 +29,13 @@ describe('react-resilent', () => {
     let onError;
 
     beforeEach(() => {
-      Resilent = ResilentComponent({
+      Resilient = ResilientComponent({
         FallbackComponent: Fallback
       })(BrokenComponent);
     });
 
     it.skip('renders the fallback', () => {
-      return expect(<Resilent />, 'when deeply rendered').then(rendered => {
+      return expect(<Resilient />, 'when deeply rendered').then(rendered => {
         expect(rendered, 'to have rendered as', <Fallback />);
       });
     });
@@ -44,7 +44,7 @@ describe('react-resilent', () => {
       const onError = sinon.spy();
 
       return expect(
-        <Resilent onError={onError} />,
+        <Resilient onError={onError} />,
         'when deeply rendered'
       ).then(() => {
         expect(onError, 'to have calls satisfying', () => {
