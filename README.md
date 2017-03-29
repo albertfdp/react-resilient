@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/albertfdp/react-resilient.svg?branch=master)](https://travis-ci.org/albertfdp/react-resilient)
 [![npm version](https://badge.fury.io/js/react-resilient.svg)](https://badge.fury.io/js/react-resilient)
 
-A high order component for resiliently render components that might fail. It wraps them around a React Fiber error boundary.
+A React component for resiliently render components that might fail. It wraps them around a React Fiber error boundary.
 
 * Tries to render your component
 * Renders `<FallbackComponent />` after the maximum number of retries (`props.maxRetries`)
