@@ -13,7 +13,7 @@
     "prebuild": "rm -rf lib/* && mkdir -p lib",
     "prepublish": "yarn build",
     "build": "babel src/ --ignore spec.js -d lib/",
-    "build:example": "cd example && NODE_ENV=production yarn build",
+    "build:example": "cd example && rm -rf ./dist/*.js && NODE_ENV=production yarn build",
     "dist": "yarn build && yarn build:example",
     "gh-pages": "gh-pages -d example/dist"
   },
