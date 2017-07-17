@@ -9,12 +9,12 @@
   "scripts": {
     "format": "prettier --single-quote --write '{src,test}/**/*.js'",
     "test": "jest",
-    "travis": "yarn format && yarn test",
+    "travis": "npm run format && npm run test",
     "prebuild": "rm -rf lib/* && mkdir -p lib",
-    "prepublish": "yarn build",
+    "prepublish": "npm run build",
     "build": "babel src/ --ignore spec.js -d lib/",
-    "build:example": "cd example && rm -rf ./dist/*.js && NODE_ENV=production yarn build",
-    "dist": "yarn build && yarn build:example",
+    "build:example": "cd example && rm -rf ./dist/*.js && NODE_ENV=production npm run build",
+    "dist": "npm run build && npm run build:example",
     "gh-pages": "gh-pages -d example/dist"
   },
   "peerDependencies": {

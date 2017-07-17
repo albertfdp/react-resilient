@@ -4,5 +4,4 @@ node_js:
 branches:
   only:
     - master
-cache: yarn
-script: yarn travis
+script: npm run travis
