@@ -1,8 +1,12 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class ResilientComponent extends Component {
   constructor(props) {
     super(props);
+
+    // Make it backwards compatible for React < 16
+    this.unstable_handleError = this.componentDidCatch;
 
     this.state = {
       error: null,
@@ -10,7 +14,7 @@ class ResilientComponent extends Component {
     };
   }
 
-  unstable_handleError(error) {
+  componentDidCatch(error) {
     const { onError } = this.props;
 
     this.setState(prevState => ({

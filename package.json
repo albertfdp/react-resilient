@@ -21,22 +21,22 @@
     "react": "^15.4.0 || ^16.0.0 || next"
   },
   "devDependencies": {
-    "babel-cli": "6.24.0",
+    "babel-cli": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "6.23.0",
-    "babel-preset-env": "1.2.2",
-    "babel-preset-react": "6.23.0",
-    "gh-pages": "0.12.0",
-    "jest": "19.0.2",
-    "prettier": "0.22.0",
-    "raf": "3.3.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "gh-pages": "^1.0.0",
+    "jest": "^20.0.4",
+    "prettier": "^1.5.3",
+    "prop-types": "^15.5.10",
+    "raf": "^3.3.2",
     "react": "next",
-    "react-addons-test-utils": "next",
     "react-dom": "next",
     "react-test-renderer": "next",
-    "sinon": "2.0.0",
-    "unexpected": "10.26.3",
-    "unexpected-react": "3.5.0",
-    "unexpected-sinon": "10.7.1"
+    "sinon": "^2.3.8",
+    "unexpected": "^10.32.1",
+    "unexpected-react": "^4.1.0",
+    "unexpected-sinon": "^10.8.1"
   },
   "jest": {
     "moduleNameMapper": {

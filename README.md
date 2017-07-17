@@ -11,7 +11,7 @@ A React component for resiliently render components that might fail. It wraps th
 ---
 
 #### ⚠️ DISCLAIMER: Experimental
-This is **experimental** and **unstable** React API. It will be fully supported with `react@next` (Fiber).
+This is **experimental** and **unstable** React API. It will be fully supported with `react@16.0.0` with first-level support `componentDidCatch`: https://github.com/facebook/react/pull/10200.
 
 ---
 
